@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Round-Robin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <h1>Welcome to the LoadBalancer!</h1>
+        <form>
+            <label>Your String:</label><br>
+            <input type="text" id="newString" placeholder="Type here ur String..."><br><br>
+            <input type="button" value="Submit" onclick="callRestService(newString)">
+        </form>
+
+        <div id="getresp"></div>
+        <script>
+            function callRestService(newString){
+                let url = "/create-string";
+
+                var message = {string : newString.value};
+
+                fetch(url, { 
+                        method: 'POST',
+                        headers: {
+                            'Content-Type' : 'application/json'
+                        },
+                        body: JSON.stringify(message)})
+                    .then(x => x.json())
+                    .then(y => {
+                        console.log(y);
+                        document.getElementById("getresp").innerHTML = "";
+                        document.getElementById("getresp").innerHTML = JSON.stringify(y, null, 2);
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  logservice1:
+    image: dar34p3r/arep-taller-6:log-service
+    ports:
+      - "35001:35000"
+  logservice2:
+    image: dar34p3r/arep-taller-6:log-service
+    ports:
+      - "35002:35000"
+  logservice3:
+    image: dar34p3r/arep-taller-6:log-service
+    ports:
+      - "35003:35000"
+  round-robin-service:
+    image: dar34p3r/arep-taller-6:round-robin
+    ports:
+      - "36000:36000"
+  mongodb:
+    image: dar34p3r/arep-taller-6:mongo
+    ports:
+      - "27017:27017"
