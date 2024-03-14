@@ -17,16 +17,15 @@ public class RoundRobinService{
 
 
     public RoundRobinService(){
-        servers.add("35001");
-        servers.add("35002");
-        servers.add("35003");
+        servers.add("http://log-service1:35000/new-string");
+        servers.add("http://log-service2:35000/new-string");
+        servers.add("http://log-service3:35000/new-string");
     }
 
     private String getNextServer(){
         String server = servers.get(currentIndex);
-        String containerIndex = "" + (currentIndex + 1);
         currentIndex = (currentIndex + 1) % servers.size(); // Incrementar el índice y evitar desbordamiento
-        return "http://logservice" + containerIndex + "-1:" + server + "/new-string";
+        return server;
     }
 
     public String connectWithLogService(String json) throws IOException{

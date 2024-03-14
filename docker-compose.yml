@@ -1,14 +1,14 @@
 version: '3.8'
 services:
-  logservice1:
+  log-service1:
     image: dar34p3r/arep-taller-6:log-service
     ports:
       - "35001:35000"
-  logservice2:
+  log-service2:
     image: dar34p3r/arep-taller-6:log-service
     ports:
       - "35002:35000"
-  logservice3:
+  log-service3:
     image: dar34p3r/arep-taller-6:log-service
     ports:
       - "35003:35000"
