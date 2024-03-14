@@ -141,6 +141,8 @@ $ docker-compose up -d
 ```
 7. Una vez todas las instancias esten corriendo, ingrese la URL de la máquina virtual de esta forma para acceder al servicio web `http://<nombre-de-la-máquina>:36000/index.html`
 ![alt text](images/image-1.png)
+
+Video de prueba del proyecto desplegado en la nube [Link al video](https://youtu.be/YWR4241QPAI)
 ## Construido con
 
 * [Maven](https://maven.apache.org/) - Manejo de dependencias
