@@ -13,7 +13,7 @@ services:
     ports:
       - "35003:35000"
   round-robin-service:
-    image: round-robin
+    image: dar34p3r/arep-taller-6:round-robin
     ports:
       - "36000:36000"
   mongodb:
